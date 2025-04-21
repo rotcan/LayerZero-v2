@@ -9,6 +9,7 @@ use messagelib_helper::{
 #[instruction(params: CommitVerificationParams)]
 pub struct CommitVerification<'info> {
     /// The custom receive config account may be uninitialized, so deserialize it only if it's initialized
+    ///CHECK : no need
     #[account(
         seeds = [
             RECEIVE_CONFIG_SEED,

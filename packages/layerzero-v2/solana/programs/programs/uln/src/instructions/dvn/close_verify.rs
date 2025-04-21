@@ -3,7 +3,9 @@ use crate::*;
 #[derive(Accounts)]
 #[instruction(params: CloseVerifyParams)]
 pub struct CloseVerify<'info> {
+    ///CHECK : no need
     pub dvn: Signer<'info>,
+    ///CHECK : no need
     #[account(mut)]
     pub receiver: AccountInfo<'info>,
     #[account(

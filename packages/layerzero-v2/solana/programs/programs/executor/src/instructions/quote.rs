@@ -7,10 +7,13 @@ use worker_interface::{worker_utils, QuoteExecutorParams};
 #[derive(Accounts)]
 #[instruction(params: QuoteExecutorParams)]
 pub struct Quote<'info> {
+    ///CHECK : no need
     #[account(seeds = [EXECUTOR_CONFIG_SEED], bump = executor_config.bump)]
     pub executor_config: Account<'info, ExecutorConfig>,
+    ///CHECK : no need
     #[account(address = price_feed_config.owner.clone())]
     pub price_feed_program: AccountInfo<'info>,
+    ///CHECK : no need
     #[account(address = executor_config.price_feed)]
     pub price_feed_config: AccountInfo<'info>,
 }

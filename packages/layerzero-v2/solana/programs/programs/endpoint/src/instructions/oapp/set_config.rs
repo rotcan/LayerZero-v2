@@ -14,6 +14,7 @@ pub struct SetConfig<'info> {
     )]
     pub oapp_registry: Account<'info, OAppRegistry>,
     /// The PDA signer to the message lib when the endpoint calls the message lib program
+    ///CHECK : no need
     #[account(
         seeds = [MESSAGE_LIB_SEED, &message_lib.key.to_bytes()],
         bump = message_lib_info.bump,
@@ -21,6 +22,7 @@ pub struct SetConfig<'info> {
     )]
     pub message_lib_info: Account<'info, MessageLibInfo>,
     /// the pda of the message_lib_program
+    ///CHECK : no need
     #[account(
         seeds = [MESSAGE_LIB_SEED],
         bump = message_lib_info.message_lib_bump,

@@ -19,8 +19,11 @@ pub mod worker_interface {
 
 #[derive(Accounts)]
 pub struct Quote<'info> {
+    ///CHECK : no need
     pub worker_config: UncheckedAccount<'info>,
+    ///CHECK : no need
     pub price_feed_program: UncheckedAccount<'info>,
+    ///CHECK : no need
     pub price_feed_config: UncheckedAccount<'info>,
 }
 
