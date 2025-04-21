@@ -26,6 +26,7 @@ pub struct Executable<'info> {
         seeds::program = ENDPOINT_ID
     )]
     pub nonce: Account<'info, Nonce>,
+    ///CHECK : no need
     #[account(
         seeds = [
             PAYLOAD_HASH_SEED,

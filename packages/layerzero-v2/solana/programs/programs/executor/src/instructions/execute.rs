@@ -23,6 +23,7 @@ pub struct Execute<'info> {
     pub config: Account<'info, ExecutorConfig>,
     pub endpoint_program: Program<'info, Endpoint>,
     /// The authority for the endpoint program to emit events
+    ///CHECK : no need
     pub endpoint_event_authority: UncheckedAccount<'info>,
 }
 

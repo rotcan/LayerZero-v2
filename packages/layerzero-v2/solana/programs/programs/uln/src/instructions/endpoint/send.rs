@@ -14,6 +14,7 @@ pub struct Send<'info> {
     #[account(has_one = endpoint, seeds = [ULN_SEED], bump = uln.bump)]
     pub uln: Account<'info, UlnSettings>,
     /// The custom send config account may be uninitialized, so deserialize it only if it's initialized
+    ///CHECK : no need
     #[account(
         seeds = [SEND_CONFIG_SEED, &params.packet.dst_eid.to_be_bytes(), &params.packet.sender.to_bytes()],
         bump
@@ -25,12 +26,14 @@ pub struct Send<'info> {
     )]
     pub default_send_config: Account<'info, SendConfig>,
     /// pay for the native fee
+    ///CHECK : no need
     #[account(
         mut,
         constraint = payer.key() != endpoint.key() @UlnError::InvalidPayer,
     )]
     pub payer: Signer<'info>,
     /// The treasury account to receive the native fee
+    ///CHECK : no need
     #[account(mut)]
     pub treasury: Option<AccountInfo<'info>>,
     /// for native fee transfer
