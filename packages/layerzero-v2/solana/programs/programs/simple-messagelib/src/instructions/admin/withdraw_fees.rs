@@ -2,6 +2,7 @@ use crate::*;
 
 #[derive(Accounts)]
 pub struct WithdrawFees<'info> {
+    /// CHECK : not needed
     pub admin: Signer<'info>,
     #[account(
         mut,
@@ -10,6 +11,7 @@ pub struct WithdrawFees<'info> {
         bump = message_lib.bump
     )]
     pub message_lib: Account<'info, MessageLib>,
+    /// CHECK : not needed
     #[account(mut)]
     pub receiver: UncheckedAccount<'info>,
 }
