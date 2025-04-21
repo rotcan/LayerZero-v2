@@ -12,4 +12,4 @@ proc_macro = true
 syn = "1.0.77"
 quote = "1.0.26"
 bs58 = "0.5.1"
-proc-macro2 = "1.0.54"
+proc-macro2 = "=1.0.94"
